@@ -1,0 +1,29 @@
+image:
+  repository: ghcr.io/rd-95/diffchecker
+  tag: latest
+  pullPolicy: Always
+
+namespace: diffchecker
+
+replicas: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+ingress:
+  host: localhost
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 10
+  cpuUtilization: 70
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
