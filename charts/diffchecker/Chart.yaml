@@ -1,0 +1,5 @@
+apiVersion: v2
+name: diffchecker
+description: Helm chart for the diffchecker Flask app on kind
+version: 0.1.0
+appVersion: "1.0.0"
