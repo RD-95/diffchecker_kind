@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: diffchecker
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rsi17/diffchecker_kind
+    targetRevision: main
+    path: charts/diffchecker
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: diffchecker
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
