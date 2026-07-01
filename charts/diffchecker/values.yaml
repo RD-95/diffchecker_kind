@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/rd-95/diffchecker
-  tag: sha-c70b42db37b6a2c64bf0c7487fb8c1b4275e4424
+  tag: sha-83a23fb7769a27afcc39ae208fd19684c5af3fac
   pullPolicy: Always
 
 namespace: diffchecker
